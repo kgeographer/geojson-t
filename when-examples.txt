@@ -1,0 +1,48 @@
+# A geo-located bronze age artifact 
+
+"when": {
+	"timespans": [
+		{	"start":  "-3100", 
+			"latest_start": "-3000", 
+			"earliest_end": "-1800", 
+			"end": "-2000", 
+			"source_label": "Aegean Bronze Age",
+			"duration": ""
+		}
+	],
+	"periods": [
+		{	"period_uri": "http://n2t.net/ark:/99152/p0qp9rs8f46",
+			"period_label": "Early Bronze Age"
+		}
+	],
+	"follows": ""
+}
+
+# A 4-day journey segment, dates unknown
+
+"when": {
+	"timespans": [
+		{	"source_label": "following Nong Khai > Milan",
+			"duration": "4d"
+		}
+	],
+	"follows": "fid_2345"
+}
+
+# A central Asian city founded sometime in the Hephthalite period
+
+"when": {
+	"timespans": [
+		{	"start":  "420", 
+			"latest_start": "440", 
+			"end": "553", 
+			"source_label": "during the Hephthalite period",
+			"duration": "1y"
+		}
+	],
+	"periods": [
+		{	"period_uri": "http://n2t.net/ark:/99152/p08m57hdwjh",
+			"period_label": "Hephthalite"
+		}
+	]
+}

@@ -1,4 +1,5 @@
-This proposed format standard tries to accommodate the fact that many geographic features are "event-like" (e.g. crimes, tweets, and journeys) or otherwise inherently temporal (e.g. political boundaries, flows, or anything else that changes position or shape over time). In fact **__all__** geographic features have temporal attributes, whether or not we have that data or use them for a particular application. Likewise, many temporal things are inherently spatial (e.g. historical periods like _Bronze Age Britain_; see [the PeriodO project](http//perio.do), [Pleiades Period Vocabulary](http://pleiades.stoa.org/vocabularies/time-periods)). All events occur somewhere, with a spatial footprint we might like to map or analyze.
+## GeoJSON-T
+This proposed extension to the GeoJSON format standard tries to accommodate the fact that many geographic features are "event-like" (e.g. crimes, tweets, and journeys) or otherwise inherently temporal (e.g. political boundaries, flows, or anything else that changes position or shape over time). In fact **__all__** geographic features have temporal attributes, whether or not we have that data or use them for a particular application. Likewise, many temporal things are inherently spatial (e.g. historical periods like _Bronze Age Britain_; see [the PeriodO project](http//perio.do), [Pleiades Period Vocabulary](http://pleiades.stoa.org/vocabularies/time-periods)). All events occur somewhere, with a spatial footprint we might like to map or analyze.
 
 Like GeoJSON and the emerging GeoJSON-LD, GeoJSON-T represents collections of geographic features in a **FeatureCollection**, and its **geometry** element handles spatial attributes identically.
 
@@ -14,7 +15,7 @@ But unlike GeoJSON, a **Feature** in GeoJSON-T can be either an essentially spat
 
 ###The structure of "when"
 
-The **when** object in a GeoJSON-T **Feature** (or in a **geometry** within a Feature's **GeometryCollection**) is comprised of:
+The **when** object in a GeoJSON-T **Feature** (or in a geometry object within a Feature's **GeometryCollection**) is comprised of:
 
 - a set of one or more **timespans**, specified by a 5-part array, the positions of which correspond to [start, latest-start, earliest-end, end, label]. Values for the first four can be any valid ISO-8601 expression, e.g. YYYY-MM-DD, YYYY-MM or YYYY; by convention, years preceded by a minus (-) are interpreted as BCE.
 
