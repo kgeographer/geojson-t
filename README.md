@@ -6,14 +6,14 @@ Like GeoJSON and the emerging GeoJSON-LD, GeoJSON-T represents collections of ge
 But unlike GeoJSON, a **Feature** in GeoJSON-T can be either an essentially spatial thing (a place) or temporal thing (period or events of any complexity). This difference requires extending the GeoJSON format in a few ways:
 
 
-###Adding time
+### Adding time
 
 * A GeoJSON-T **Feature** can have optional temporal attributes, in a **when** element
 * If a **Feature** has a single geometry, a **when** temporal element can be added as a sibling to GeoJSON's standard **type**, **geometry**, and **properties** elements
 * If a **Feature** had multiple positions or extents over time, its **geometry** will be of type **GeometryCollection** -- an array of one or more **geometry** objects. Each of these must have a **when** temporal element, along with the standard **type** and **coordinates** elements.
 * Each **geometry** in a **GeometryCollection** can have an unlimited number of **properties**, although these are outside the GeoJSON specification and, like **when** elements, will be ignored by existing GeoJSON-compatible software.
 
-###The structure of "when"
+### The structure of "when"
 
 The **when** object in a GeoJSON-T **Feature** (or in a geometry object within a Feature's **GeometryCollection**) is comprised of:
 
