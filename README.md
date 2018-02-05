@@ -1,5 +1,5 @@
 ## GeoJSON-LDT
-This proposed extension to the GeoJSON-LD format tries to accommodate the fact that many geographic features are "event-like" (e.g. crimes, tweets,  journeys) or otherwise inherently temporal (e.g. political boundaries, flows, or anything else that changes position or shape over time). In fact **__all__** geographic features have temporal attributes, whether or not we have that data or use them for a particular application. Likewise, many temporal things are inherently spatial (e.g. historical periods like _Bronze Age Britain_; see [the PeriodO project](http//perio.do), [Pleiades Period Vocabulary](http://pleiades.stoa.org/vocabularies/time-periods)). All events occur somewhere, with a spatial footprint we might like to map or analyze.
+This proposed extension to the GeoJSON-LD format tries to accommodate the fact that many geographic features are "event-like" (e.g. journeys, crimes, tweets) or otherwise inherently temporal (e.g. political boundaries, flows, or anything else that changes position or shape over time). In fact **__all__** geographic features have temporal attributes, whether or not we have that data or use them for a particular application. Likewise, many temporal things are inherently spatial (e.g. historical periods like _Bronze Age Britain_; see [the PeriodO project](http//perio.do), [Pleiades Period Vocabulary](http://pleiades.stoa.org/vocabularies/time-periods)). All events occur somewhere, with a spatial footprint we might like to map or analyze.
 
 Like the [GeoJSON standard]() (RFC 7946) and its [GeoJSON-LD](http://geojson.org/geojson-ld/) cousin, GeoJSON-LDT represents collections of geographic features in a **FeatureCollection**, and its **geometry** element handles spatial attributes identically. Any software that interprests GeoJSON will interpret GeoJSON-LDT, simply ignoring certain of its elements.
 
@@ -10,7 +10,7 @@ But unlike GeoJSON, a **Feature** in GeoJSON-LDT can be either an essentially sp
 
 A GeoJSON-LDT **Feature** can have optional temporal attributes, in one or more **when** elements
 
-If a **Feature** has a single geometry, a single **when** temporal element can be added as a sibling to GeoJSON's standard **type**, **geometry**, and **properties** elements. Note that these key values now aliases to specified in the [GeoJSON-LD context file] (http://geojson.org/geojson-ld/) indicated.
+If a **Feature** has a single geometry, a single **when** temporal element can be added as a sibling to GeoJSON's standard **type**, **geometry**, and **properties** elements. Note that these standard key names are now aliases, specified in the [GeoJSON-LD context file] (http://geojson.org/geojson-ld/) indicated. Additional context information can be added in a second "@context".
 
 <pre>{
 
@@ -91,4 +91,7 @@ The **when** object in a GeoJSON-T **Feature** (or in a geometry object within a
 An outstanding issue is whether to permit a **_circa_** operator for the four temporal expressions in timespans. For example: **~1635-01** could stand for 'circa January, 1653' -- with the question of how to represent that visually or in computation left to individual software applications.
 
 ## Please comment
-The development of GeoJSON-LDT could evolve into a more formal process, but that should follow more informal discussion. Please comment as [an Issue in this repository](https://github.com/kgeographer/topotime/issues). GeoJSON-LDT will be implemented in the [World-Historical Gazetteer] (http://whgazetteer.org) project now under way.
+This extension proposes what are called "Foreign Members" in the GeoJSON specification ("when" & "attributes"). It is understood that the value of these is entirely dependent on there being software that expects and uses them in computation and/or display. An earlier version (GeoJSON-T) was implemented in the pilot web app [Linked Places](http://linkedplaces.org), and GeoJSON-LDT will be implemented in the [World-Historical Gazetteer] (http://whgazetteer.org) project now under way.
+
+
+The development of GeoJSON-LDT could evolve into a more formal process, but that should follow more informal discussion. Please comment as [an Issue in this repository](https://github.com/kgeographer/topotime/issues). 
