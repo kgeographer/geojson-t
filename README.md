@@ -12,8 +12,7 @@ A GeoJSON-T **Feature** can have optional temporal attributes, in one or more **
 
 If a **Feature** has a single geometry, a single **when** temporal element can be added as a sibling to GeoJSON's standard **type**, **geometry**, and **properties** elements.
 
-<pre>
-{
+<pre>{
 "type": "FeatureCollection",
 "features": [
 {
@@ -21,11 +20,10 @@ If a **Feature** has a single geometry, a single **when** temporal element can b
    "id": "",
    "properties": {},
    "geometry": {},
-   <span style="color:#FF0000; font-weight:800">"when": {}</span>
+   <strong>"when": {}</strong>
    }
 ]
-}
-</pre>
+}</pre>
 
 If a **Feature** had multiple locations or extents over time, its **geometry** will be of type **GeometryCollection** -- an array of one or more **geometry** objects. Each of these can have a single **when** temporal element, along with the standard **type** and **coordinates** elements
 
@@ -58,7 +56,7 @@ The **when** object in a GeoJSON-T **Feature** (or in a geometry object within a
 
 - an optional **follows** property, whose value can be an internal identifier for the preceding segment of an ordered set
 
-<pre><strong>"when"</span></strong>: {
+<pre><strong>"when"</strong>: {
   "timespans": [
     {  
       "start": { "in": "nnnn-nn" },
@@ -76,7 +74,7 @@ The **when** object in a GeoJSON-T **Feature** (or in a geometry object within a
   ],
   "duration": "P100Y",
   "follows": "http://mygaz.org/p_00123",
-  "label": "overlapping with the Hellenistic period"
+  "label": "for a century in the Hellenistic period"
 }</pre>
 
 
