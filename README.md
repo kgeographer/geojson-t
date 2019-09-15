@@ -1,4 +1,7 @@
 ## GeoJSON-T
+
+_Updated, 15 September 2019_
+
 This proposed extension to the GeoJSON format tries to accommodate the fact that many geographic features are "event-like" (e.g. journeys, crimes, tweets) or otherwise inherently temporal (e.g. political boundaries, flows, or anything else that changes position or shape over time). In fact **__all__** geographic features have temporal attributes, whether or not we have that data or use them for a particular application. Likewise, many temporal things are inherently spatial (e.g. historical periods like _Bronze Age Britain_; see [the PeriodO project](http//perio.do), [Pleiades Period Vocabulary](http://pleiades.stoa.org/vocabularies/time-periods)). All events occur somewhere, with a spatial footprint we might like to map or analyze.
 
 Like the [GeoJSON standard](https://tools.ietf.org/html/rfc7946) (RFC 7946), GeoJSON-T represents collections of geographic features in a **FeatureCollection**, and its **geometry** element handles spatial attributes identically. Any software that interprets GeoJSON will interpret GeoJSON-T, simply ignoring certain of its elements.
@@ -48,13 +51,15 @@ The **when** object in a GeoJSON-T **Feature** (or in a geometry object within a
 
 - a set of one or more **timespans**
 
-- a set of one or more named **period definitions**
+- a set of one or more named, web-published **period definitions**
 
-- an optional **label** property
+and any of these optional properties:
 
-- an optional **duration** property whose value is the letter 'P' followed by an integer followed by a single letter (D, W, M, Y for day, week, month, year respectively) indicating the phenomena occurred or is valid for that duration _**some time during**_ the timespan; e.g. "P4D" or "P15Y". Absence of a "duration" element will be interpreted as the phenomena occurring _**throughout**_ the timespan.
+- a **label**
 
-- an optional **follows** property, whose value can be an internal identifier for the preceding segment of an ordered set
+- a **duration** whose value is the letter 'P' followed by an integer followed by a single letter (D, W, M, Y for day, week, month, year respectively) indicating the phenomena occurred or is valid for that duration _**some time during**_ the timespan; e.g. "P4D" or "P15Y". Absence of a "duration" element will be interpreted as the phenomena occurring _**throughout**_ the timespan.
+
+- a **follows** property, whose value can be an internal identifier for the preceding segment of an ordered set
 
 <pre><strong>"when"</strong>: {
   "timespans": [
@@ -78,15 +83,26 @@ The **when** object in a GeoJSON-T **Feature** (or in a geometry object within a
 }</pre>
 
 
-An outstanding issue is whether to support the operators proposed in ISO 8601 level 1 for uncertainty and approximation (formerly, [Extended Date/Time Format, EDTF](https://www.loc.gov/standards/datetime/pre-submission.html)). Of particular interest are the operators **~** (approximate), **?** (uncertain), and **%** (both approximate and uncertain). The question of how to represent these visually or in computation would be left to individual software applications supporting GeoJSON-T.
+An outstanding issue is whether to support features proposed in Levels 0 and 1 of the [Extended Date/Time Format, EDTF](https://www.loc.gov/standards/datetime/edtf.html)). Two elements are of particular interest:
+
+- The operators **~**, **?**, and **%** (respectively: approximate, uncertain and both approximate and uncertain). The question of how to represent these visually or compute over them would be left to individual software applications supporting GeoJSON-T.
+
+- A simplified method of representing intervals that adds capability for open or uncertain bounds. Start and end dates are ISO 8601 expressions separated by a forward slash character "/". The GeoJSON-T format's start and end objects above could be replaced by single ISO 8601 dates or EDTF pairs standing for "earliest" and "latest." For example, the following would mean "from April, 1832 to sometime between 1 June and 14 August in 1835." 
+
+<pre>
+{  
+  "start": "1832-04",
+  "end": "1835-06-01/1835-08-15",
+}
+</pre>
 
 ## Please comment
 This extension proposes what are called "Foreign Members" in the GeoJSON specification ("when" & variously named key/value pairs in a geometry). It is understood that the value of these is entirely dependent on there being software that expects and uses them in computation and/or display.
 
 ### Uptake
 
-GeoJSON-T is the basis for the JSON-LD compatible [Linked Places Interconnection Format (LPIF)](https://github.com/LinkedPasts/lpif) in development for use by both the [Peripleo](http://peripleo.pelagios.org) and [World-Historical Gazetteer] (http://whgazetteer.org) projects.
+GeoJSON-T is the basis for the JSON-LD compatible [Linked Places format (LP)](https://github.com/LinkedPasts/linked-places) in development for use by both the [Peripleo](http://peripleo.pelagios.org) and [World-Historical Gazetteer] (http://whgazetteer.org) projects.
 
-An earlier version of GeoJSON-T was implemented in the pilot web app [Linked Places](http://linkedplaces.org);
+An earlier version of GeoJSON-T was implemented in the pilot web app [Linked Traces](http://linkedtraces.org)
 
-The development of GeoJSON-T (and a future GeoJSON-LDT) should evolve into a more formal process, following this more informal presentation and discussion. Please comment as [an Issue in this repository](https://github.com/kgeographer/geojson-t/issues).
+The development of GeoJSON-T should evolve into a more formal process following this informal presentation and discussion. Please comment as [an Issue in this repository](https://github.com/kgeographer/geojson-t/issues).
