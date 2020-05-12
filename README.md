@@ -82,7 +82,7 @@ and any of these optional properties:
   "label": "for a century in the Hellenistic period"
 }</pre>
 
-
+### Possible extension
 An outstanding issue is whether to support features proposed in Levels 0 and 1 of the [Extended Date/Time Format, EDTF](https://www.loc.gov/standards/datetime/edtf.html)). Two elements are of particular interest:
 
 - The operators **~**, **?**, and **%** (respectively: approximate, uncertain and both approximate and uncertain). The question of how to represent these visually or compute over them would be left to individual software applications supporting GeoJSON-T.
@@ -102,6 +102,8 @@ This extension proposes what are called "Foreign Members" in the GeoJSON specifi
 ### Uptake
 
 GeoJSON-T is the basis for the JSON-LD compatible [Linked Places format (LP)](https://github.com/LinkedPasts/linked-places) in development for use by both the [Peripleo](http://peripleo.pelagios.org) and [World-Historical Gazetteer] (http://whgazetteer.org) projects.
+
+GeoJSON-T is the proposed format for the [WebMaps-T project](https://medium.com/pelagios/introducing-the-webmaps-t-working-group-7cff98021e42) working to "visualise Linked Open Data (LOD) and other humanities data in time and space." [GitHub](https://github.com/pelagios/Leaflet.timeline.webmapst)
 
 An earlier version of GeoJSON-T was implemented in the pilot web app [Linked Traces](http://linkedtraces.org)
 
