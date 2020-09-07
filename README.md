@@ -105,6 +105,6 @@ GeoJSON-T is the basis for the JSON-LD compatible [Linked Places format (LP)](ht
 
 GeoJSON-T is the proposed format for the [WebMaps-T project](https://medium.com/pelagios/introducing-the-webmaps-t-working-group-7cff98021e42) working to "visualise Linked Open Data (LOD) and other humanities data in time and space." [GitHub](https://github.com/pelagios/Leaflet.timeline.webmapst)
 
-An earlier version of GeoJSON-T was implemented in the pilot web app [Linked Paths](http://http://linkedpaths.kgeographer.org)
+An earlier version of GeoJSON-T was implemented in the pilot web app [Linked Paths](http://linkedpaths.kgeographer.org)
 
 The development of GeoJSON-T should evolve into a more formal process following this informal presentation and discussion. Please comment as [an Issue in this repository](https://github.com/kgeographer/geojson-t/issues).
