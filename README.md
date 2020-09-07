@@ -87,7 +87,7 @@ An outstanding issue is whether to support features proposed in Levels 0 and 1 o
 
 - The operators **~**, **?**, and **%** (respectively: approximate, uncertain and both approximate and uncertain). The question of how to represent these visually or compute over them would be left to individual software applications supporting GeoJSON-T.
 
-- A simplified method of representing intervals that adds capability for open or uncertain bounds. Start and end dates are ISO 8601 expressions separated by a forward slash character "/". The GeoJSON-T format's start and end objects above could be replaced by single ISO 8601 dates or EDTF pairs standing for "earliest" and "latest." For example, the following would mean "from April, 1832 to sometime between 1 June and 14 August in 1835." 
+- A simplified method of representing intervals that adds capability for open or uncertain bounds. Start and end dates are ISO 8601 expressions separated by a forward slash character "/". The GeoJSON-T format's start and end objects above could be replaced by single ISO 8601 dates or EDTF pairs standing for "earliest" and "latest." For example, the following would mean "from April, 1832 to sometime between 1 June and 14 August in 1835."
 
 <pre>
 {  
@@ -105,6 +105,6 @@ GeoJSON-T is the basis for the JSON-LD compatible [Linked Places format (LP)](ht
 
 GeoJSON-T is the proposed format for the [WebMaps-T project](https://medium.com/pelagios/introducing-the-webmaps-t-working-group-7cff98021e42) working to "visualise Linked Open Data (LOD) and other humanities data in time and space." [GitHub](https://github.com/pelagios/Leaflet.timeline.webmapst)
 
-An earlier version of GeoJSON-T was implemented in the pilot web app [Linked Traces](http://linkedtraces.org)
+An earlier version of GeoJSON-T was implemented in the pilot web app [Linked Paths](http://http://linkedpaths.kgeographer.org)
 
 The development of GeoJSON-T should evolve into a more formal process following this informal presentation and discussion. Please comment as [an Issue in this repository](https://github.com/kgeographer/geojson-t/issues).
