@@ -1,5 +1,9 @@
 ## GeoJSON-T
 
+#### NOTE (1 July 2023) 
+Development and maintenance of this experimental format was suspended in 2019, and superceded by the [Linked Places format (LPF)](https://github.com/LinkedPasts/linked-places-format), which adopts the concept of a "when" object, and includes a number of additional attribute categories. LPF is in current use in the [World Historical Gazetteer](https://whgazetteer.org) platform, and is seeing increasing uptake by other projects.
+
+---------
 _Updated, 15 September 2019_
 
 This proposed extension to the GeoJSON format tries to accommodate the fact that many geographic features are "event-like" (e.g. journeys, crimes, tweets) or otherwise inherently temporal (e.g. political boundaries, flows, or anything else that changes position or shape over time). In fact **__all__** geographic features have temporal attributes, whether or not we have that data or use them for a particular application. Likewise, many temporal things are inherently spatial (e.g. historical periods like _Bronze Age Britain_; see [the PeriodO project](http//perio.do), [Pleiades Period Vocabulary](http://pleiades.stoa.org/vocabularies/time-periods)). All events occur somewhere, with a spatial footprint we might like to map or analyze.
